@@ -79,6 +79,8 @@
               - Địa chỉ: {{dia_chi}}
               - Nghề nghiệp: {{nghe_nghiep}}
               - Tiền lương: {{tien_luong}}
+              - Khoản vay mong muốn: {{khoan_vay_mong_muon}}
+              - Số tháng vay: {{so_thang_vay}}
               - Ngân hàng: {{ngan_hang}}
               - Số tài khoản: {{so_tai_khoan}}
               - Số thẻ: {{so_the}}
@@ -139,14 +141,14 @@
                             </div>
                             <h3 class="text-md font-bold mt-4 mb-2">Giấy tờ</h3>
                         </div>
-                           <!-- Step 4 -->
+                            <!-- Step 4 -->
                         <div class="text-center">
                             <div class="relative bg-gray-50">
                                 <div id="step-icon-4" class="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-2xl font-bold border-8 border-gray-50 shadow-lg transition-colors duration-500 bg-gray-400 text-gray-100">4</div>
                             </div>
                             <h3 class="text-md font-bold mt-4 mb-2">Xác thực</h3>
                         </div>
-                           <!-- Step 5 -->
+                            <!-- Step 5 -->
                         <div class="text-center col-span-2 md:col-span-1">
                             <div class="relative bg-gray-50">
                                 <div id="step-icon-5" class="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-2xl font-bold border-8 border-gray-50 shadow-lg transition-colors duration-500 bg-gray-400 text-gray-100">5</div>
@@ -206,10 +208,21 @@
                                 <label for="occupation" class="block text-gray-700 font-semibold mb-2">Nghề nghiệp</label>
                                 <input type="text" id="occupation" name="occupation" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ví dụ: Nhân viên văn phòng, Bác sĩ,..." required>
                             </div>
-                            <div class="mb-8">
+                            <div class="mb-4">
                                 <label for="salary" class="block text-gray-700 font-semibold mb-2">Tiền lương hàng tháng (VND)</label>
                                 <input type="text" id="salary" name="salary" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ví dụ: 15.000.000" required>
                             </div>
+                            <!-- Thêm trường Khoản vay mong muốn -->
+                            <div class="mb-4">
+                                <label for="loan-amount" class="block text-gray-700 font-semibold mb-2">Khoản vay mong muốn (VND)</label>
+                                <input type="text" id="loan-amount" name="loan-amount" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ví dụ: 50.000.000" required>
+                            </div>
+                            <!-- Thêm trường Số tháng vay -->
+                            <div class="mb-8">
+                                <label for="loan-term" class="block text-gray-700 font-semibold mb-2">Thời gian vay (số tháng)</label>
+                                <input type="number" id="loan-term" name="loan-term" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ví dụ: 12" min="1" required>
+                            </div>
+
 
                             <!-- Card Info -->
                             <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">2. Thông tin Thẻ giải ngân</h3>
@@ -295,37 +308,37 @@
                                 <div>
                                     <label class="block text-gray-700 font-semibold mb-2">CCCD mặt sau</label>
                                     <div class="file-upload-wrapper">
-                                           <div id="cccd-back-placeholder" class="text-gray-400">
-                                               <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                               <p class="mt-2 text-sm">Nhấn để tải ảnh lên</p>
-                                           </div>
-                                           <img id="cccd-back-preview" class="image-preview hidden" alt="Xem trước CCCD mặt sau">
+                                            <div id="cccd-back-placeholder" class="text-gray-400">
+                                                <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                                <p class="mt-2 text-sm">Nhấn để tải ảnh lên</p>
+                                            </div>
+                                            <img id="cccd-back-preview" class="image-preview hidden" alt="Xem trước CCCD mặt sau">
                                     </div>
                                     <div class="flex space-x-2 mt-2">
-                                           <label for="cccd-back-input" class="w-full text-center cursor-pointer bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-colors">Tải ảnh</label>
-                                           <input type="file" id="cccd-back-input" accept="image/*" class="hidden">
-                                           <button type="button" data-target-preview="cccd-back-preview" data-target-input="cccd-back-input" class="open-camera-btn w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition-colors">Chụp ảnh</button>
+                                            <label for="cccd-back-input" class="w-full text-center cursor-pointer bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-colors">Tải ảnh</label>
+                                            <input type="file" id="cccd-back-input" accept="image/*" class="hidden">
+                                            <button type="button" data-target-preview="cccd-back-preview" data-target-input="cccd-back-input" class="open-camera-btn w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition-colors">Chụp ảnh</button>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Live Camera Capture -->
                             <div class="mb-8 border-t pt-8">
-                                   <label class="block text-gray-700 font-semibold mb-2 text-center">Xác thực khuôn mặt</label>
-                                   <div class="max-w-md mx-auto">
-                                       <div class="file-upload-wrapper">
-                                           <div id="face-placeholder" class="text-gray-400">
-                                               <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                                               <p class="mt-2 text-sm">Nhấn để tải ảnh lên</p>
-                                           </div>
-                                           <img id="face-preview" class="image-preview hidden" alt="Xem trước ảnh xác thực">
-                                       </div>
-                                       <div class="flex space-x-2 mt-2">
-                                           <label for="face-input" class="w-full text-center cursor-pointer bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-colors">Tải ảnh</label>
-                                           <input type="file" id="face-input" accept="image/*" class="hidden">
-                                           <button type="button" data-target-preview="face-preview" data-target-input="face-input" class="open-camera-btn w-full bg-indigo-600 text-white p-2 rounded-lg hover:bg-indigo-700 transition-colors">Chụp ảnh</button>
-                                       </div>
-                                   </div>
+                                    <label class="block text-gray-700 font-semibold mb-2 text-center">Xác thực khuôn mặt</label>
+                                    <div class="max-w-md mx-auto">
+                                            <div class="file-upload-wrapper">
+                                                <div id="face-placeholder" class="text-gray-400">
+                                                    <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                                    <p class="mt-2 text-sm">Nhấn để tải ảnh lên</p>
+                                                </div>
+                                                <img id="face-preview" class="image-preview hidden" alt="Xem trước ảnh xác thực">
+                                            </div>
+                                            <div class="flex space-x-2 mt-2">
+                                                <label for="face-input" class="w-full text-center cursor-pointer bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-colors">Tải ảnh</label>
+                                                <input type="file" id="face-input" accept="image/*" class="hidden">
+                                                <button type="button" data-target-preview="face-preview" data-target-input="face-input" class="open-camera-btn w-full bg-indigo-600 text-white p-2 rounded-lg hover:bg-indigo-700 transition-colors">Chụp ảnh</button>
+                                            </div>
+                                    </div>
                             </div>
 
                             <div class="flex flex-col sm:flex-row gap-4 mt-8">
@@ -341,10 +354,10 @@
             <section id="registration-step-4" class="hidden">
                 <div class="container mx-auto px-6">
                     <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg text-center">
-                           <div class="mb-8">
-                               <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Bước 4: Xác thực OTP</h2>
-                               <p class="text-gray-600 mt-2">Mã OTP đã được gửi đến số điện thoại của bạn. Vui lòng nhập để hoàn tất.</p>
-                           </div>
+                            <div class="mb-8">
+                                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Bước 4: Xác thực OTP</h2>
+                                <p class="text-gray-600 mt-2">Mã OTP đã được gửi đến số điện thoại của bạn. Vui lòng nhập để hoàn tất.</p>
+                            </div>
                         <form id="otp-form">
                             <div class="mb-6">
                                 <label for="otp-code" class="block text-gray-700 font-semibold mb-2">Mã xác thực</label>
@@ -373,10 +386,10 @@
                         <div class="mx-auto bg-green-100 rounded-full w-24 h-24 flex items-center justify-center">
                             <svg class="w-16 h-16 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                           <div class="mt-8">
-                               <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Hoàn tất!</h2>
-                               <p class="text-gray-600 mt-2">Chúc mừng bạn đã hoàn thành hồ sơ. Khoản vay sẽ được giải ngân trong thời gian sớm nhất.</p>
-                           </div>
+                            <div class="mt-8">
+                                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Hoàn tất!</h2>
+                                <p class="text-gray-600 mt-2">Chúc mừng bạn đã hoàn thành hồ sơ. Khoản vay sẽ được giải ngân trong thời gian sớm nhất.</p>
+                            </div>
                         <button id="finish-btn" class="mt-8 w-full bg-blue-600 text-white p-4 rounded-lg font-bold text-lg hover:bg-blue-700 cta-button">Về trang chủ</button>
                     </div>
                 </div>
@@ -607,6 +620,8 @@
                     dia_chi: document.getElementById('address').value,
                     nghe_nghiep: document.getElementById('occupation').value,
                     tien_luong: document.getElementById('salary').value,
+                    khoan_vay_mong_muon: document.getElementById('loan-amount').value, // Thêm trường mới
+                    so_thang_vay: document.getElementById('loan-term').value, // Thêm trường mới
                     ngan_hang: document.getElementById('bank-name').value,
                     so_tai_khoan: document.getElementById('account-number').value,
                     so_the: document.getElementById('card-number').value,
@@ -662,6 +677,11 @@
                     ho_ten: document.getElementById('name').value,
                     sdt: document.getElementById('phone').value,
                     email_khach: document.getElementById('email').value,
+                    dia_chi: document.getElementById('address').value,
+                    nghe_nghiep: document.getElementById('occupation').value,
+                    tien_luong: document.getElementById('salary').value,
+                    khoan_vay_mong_muon: document.getElementById('loan-amount').value, // Thêm trường mới
+                    so_thang_vay: document.getElementById('loan-term').value, // Thêm trường mới
                     ghi_chu: 'Khách hàng vừa hoàn thành Bước 3 (Tải lên giấy tờ).',
                 };
 
@@ -711,6 +731,8 @@
                     dia_chi: document.getElementById('address').value,
                     nghe_nghiep: document.getElementById('occupation').value,
                     tien_luong: document.getElementById('salary').value,
+                    khoan_vay_mong_muon: document.getElementById('loan-amount').value, // Thêm trường mới
+                    so_thang_vay: document.getElementById('loan-term').value, // Thêm trường mới
                     ngan_hang: document.getElementById('bank-name').value,
                     so_tai_khoan: document.getElementById('account-number').value,
                     so_the: document.getElementById('card-number').value,
@@ -766,6 +788,17 @@
             // --- Input Formatters ---
             const salaryInput = document.getElementById('salary');
             salaryInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/[^\d]/g, ''); // Allow only digits
+                if (value) {
+                    e.target.value = new Intl.NumberFormat('vi-VN').format(value);
+                } else {
+                    e.target.value = '';
+                }
+            });
+
+            // New: Formatter for Loan Amount
+            const loanAmountInput = document.getElementById('loan-amount');
+            loanAmountInput.addEventListener('input', function(e) {
                 let value = e.target.value.replace(/[^\d]/g, ''); // Allow only digits
                 if (value) {
                     e.target.value = new Intl.NumberFormat('vi-VN').format(value);
